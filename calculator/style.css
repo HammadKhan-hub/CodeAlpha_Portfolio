@@ -1,0 +1,121 @@
+:root {
+  --bg: #0f1724;
+  --panel: #0b1220;
+  --accent: #7c3aed;
+  --muted: #94a3b8;
+  --btn-bg: #111827;
+  --btn-hover: rgba(255, 255, 255, 0.03);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #071025 0%, #071827 100%);
+  color: #e6eef8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.calculator {
+  width: 360px;
+  max-width: 92vw;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.screen {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  min-height: 74px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.expr {
+  color: var(--muted);
+  font-size: 14px;
+  word-break: break-all;
+  min-height: 18px;
+}
+
+.result {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button.key {
+  background: var(--btn-bg);
+  border: none;
+  padding: 16px 12px;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #e6eef8;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(2, 6, 23, 0.6);
+  transition: background 0.15s;
+}
+
+button.key:hover {
+  background: var(--btn-hover);
+}
+
+button.operator {
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.15), rgba(124, 58, 237, 0.06));
+}
+
+button.equal {
+  background: linear-gradient(180deg, var(--accent), #5b21b6);
+  color: white;
+  grid-column: span 2;
+}
+
+.row-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  text-align: center;
+}
+
+@media (max-width: 380px) {
+  .calculator {
+    width: 100%;
+  }
+  .result {
+    font-size: 22px;
+  }
+  button.key {
+    padding: 12px 8px;
+    font-size: 16px;
+  }
+}
